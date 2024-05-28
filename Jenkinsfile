@@ -1,32 +1,35 @@
-pipeline {
+pipeline{
 
     agent {
         label 'windows'
     }
 
-    environment {
+   
+        stages{
+            stage('checkout'){
 
-        JAVA_HOME = 'C:\\Program Files\\Java\\jdk-17'
-        MAVEN_HOME = 'D:\\software\\apache-maven-3.8.6-bin\\apache-maven-3.8.6'
-        PATH = '${JAVA_HOME}\\bin;${MAVEN_HOME}\\bin;${env.PATH}'
+                steps {
 
-    }
-         stages {
-        stage('Checkout') {
-            steps {
-                git url: 'https://github.com/Samraj10/mf_second.git', branch: 'master'
+                    git url: 'https://github.com/Samraj10/mf_second.git', branch: 'master'
+
+                }
+
             }
-        }
-        stage('Build') {
-            steps {
-                bat 'mvn clean package'
+            stage('build'){
+
+                steps {
+
+                    bat 'mvn clean package'
+                }
             }
-        }
-        stage('Test') {
-            steps {
-                bat 'mvn test'
+            stage('test'){
+
+                steps {
+
+                    bat 'mvn test'
+                }
+
             }
-        }
-    }   
+        }   
 
 }
