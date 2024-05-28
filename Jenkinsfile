@@ -16,7 +16,7 @@ pipeline{
 
                 steps {
 
-                    git url: 'https://github.com/Samraj10/mf.git', branch: 'master'
+                    git url: 'https://github.com/Samraj10/mf_second.git', branch: 'master'
 
                 }
 
