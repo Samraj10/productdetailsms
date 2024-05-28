@@ -11,31 +11,22 @@ pipeline {
         PATH = '${JAVA_HOME}\\bin;${MAVEN_HOME}\\bin;${env.PATH}'
 
     }
-        stages{
-            stage('checkout'){
-
-                steps {
-
-                    git url: 'https://github.com/Samraj10/mf.git', branch: 'master'
-
-                }
-
+         stages {
+        stage('Checkout') {
+            steps {
+                git url: 'https://github.com/Samraj10/mf_second.git', branch: 'master'
             }
-            stage('build'){
-
-                steps {
-
-                    bat 'mvn clean package'
-                }
+        }
+        stage('Build') {
+            steps {
+                bat 'mvn clean package'
             }
-            stage('test'){
-
-                steps {
-
-                    bat 'mvn test'
-                }
-
+        }
+        stage('Test') {
+            steps {
+                bat 'mvn test'
             }
-        }   
+        }
+    }   
 
 }
