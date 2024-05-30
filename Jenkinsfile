@@ -36,7 +36,7 @@ pipeline{
                 steps{
                     script{
 
-                        def warFile='target/mf.war'
+                        def warFile='target/mf-second.war'
                         def remoteUser='samra'
                         def remoteHost='192.168.59.111'
                         def remotePath='/home/samra/work'
@@ -54,7 +54,7 @@ pipeline{
                     }
 
                 }
-            }
+            } 
         }   
 
 }
