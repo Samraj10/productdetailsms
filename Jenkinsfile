@@ -19,14 +19,14 @@ pipeline{
 
                 steps {
 
-                    sh 'mvn clean package'
+                    bat 'mvn clean package'
                 }
             }
             stage('test'){
 
                 steps {
 
-                    sh 'mvn test'
+                    bat 'mvn test'
                 }
 
             }
