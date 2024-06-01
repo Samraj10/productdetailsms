@@ -31,9 +31,18 @@ pipeline{
 
             }
 
+            stage{
 
-                
+                steps {
+
+                    script {
+                    // Verify Docker is available
+                    bat 'docker --version'
+                     }
+                }
+
+            }             
              
-        }   
+     }   
 
 }
