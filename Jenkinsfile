@@ -41,6 +41,22 @@ pipeline{
                      }
                 }
 
+            }
+
+            stage ('build docker image') {
+
+                steps {
+
+                    script {
+
+                        def dockerFileName='Dockerfile'
+                        def dockerTag='latest'
+                        def dockerfilePath='D://applications//mf//mf'
+                        def dockerImageName='mf-second_app'
+                        bat 'cd D:/applications/mf-second/mf-second'
+                        bat 'docker build -t mf_app:latest .'
+                    }
+                }
             }             
              
      }   
