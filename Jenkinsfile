@@ -3,8 +3,15 @@ pipeline{
     agent {
         label 'windows'
     }
+        
+        environment {
 
-   
+            DOCKER_CREDENTIALS_ID= 'dockerhub'
+            DOCKER_IMAGE_NAME= 'samadhangapat/mf_app:latest'
+            DOCKER_USERNAME='samadhangapat'
+            DOCKER_PASSWORD='Samraj@10'
+        }
+
         stages{
             stage('checkout'){
 
@@ -56,6 +63,22 @@ pipeline{
                         bat 'cd D:/applications/mf-second/mf-second'
                         bat 'docker build -t mf-second_app:latest .'
                     }
+                }
+            }
+
+            stage('push docker image'){
+
+                steps {
+
+                    script {
+
+                        withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+                            bat "docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}"
+                        }
+                            bat " docker push ${DOCKER_IMAGE_NAME} "
+
+                    }
+
                 }
             }             
              
