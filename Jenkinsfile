@@ -88,15 +88,15 @@ pipeline{
             stage('SSH into Ansible Server and Run Playbook') {
             steps {
                 // Use the SSH Publisher plugin to run commands on the remote server
-                sshPublisher(
+                sshPublisher( 
                     publishers: [
                         sshPublisherDesc(
                             configName: 'ansible_server',  // Name of the SSH server configured in Jenkins
                             transfers: [
                                 sshTransfer(
-                                    execCommand: 'ansible-playbook /home/samra/ansible_work/windows_ping.yml',  // Command to execute
+                                    execCommand: 'ansible-playbook /home/samra/ansible_work/mf-second_deploy.yml',  // Command to execute
                                     remoteDirectory: '/home/samra/ansible_work',  // Remote directory (optional)
-                                    sourceFiles: 'windows_ping.yml',  // Source files to transfer (optional)
+                                    sourceFiles: 'mf-second/mf-second_deploy.yml',  // Source files to transfer (optional)
                                     removePrefix: '',  // Remove prefix from transferred files (optional)
                                     execTimeout: 120000,  // Execution timeout in milliseconds (optional)
                                     usePty: true  // Use Pseudo Terminal (optional)

@@ -1,9 +1,12 @@
 ---
 - name: windows ping
   hosts: windows
+  gather_facts: no
   tasks:
-    - name: ping to windows
+    - name: Ensure minikube is running
       win_ping:
-      become: yes
-      become_user: samra
+      
 ...
+
+
+
