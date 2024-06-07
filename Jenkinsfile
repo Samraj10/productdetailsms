@@ -7,9 +7,12 @@ pipeline{
         environment {
 
             DOCKER_CREDENTIALS_ID= 'dockerhub'
-            DOCKER_IMAGE_NAME= 'samadhangapat/mf-second_app:latest'
+            DOCKER_IMAGE_NAME= 'samadhangapat/mf_app:latest'
             DOCKER_USERNAME='samadhangapat'
             DOCKER_PASSWORD='Samraj@10'
+            ANSIBLE_VM_IP = '192.168.59.111'
+            ANSIBLE_USER = 'samra'
+            ANSIBLE_CREDENTIALS_ID = 'ansible_credentials'
         }
 
         stages{
@@ -65,7 +68,7 @@ pipeline{
                     }
                 }
             }
-
+/*
             stage('push docker image'){
 
                 steps {
@@ -81,7 +84,32 @@ pipeline{
 
                 }
             }             
-             
+*/
+            stage('SSH into Ansible Server and Run Playbook') {
+            steps {
+                // Use the SSH Publisher plugin to run commands on the remote server
+                sshPublisher(
+                    publishers: [
+                        sshPublisherDesc(
+                            configName: 'ansible_server',  // Name of the SSH server configured in Jenkins
+                            transfers: [
+                                sshTransfer(
+                                    execCommand: 'ansible-playbook /home/samra/ansible_work/windows_ping.yml',  // Command to execute
+                                    remoteDirectory: '/home/samra/ansible_work',  // Remote directory (optional)
+                                    sourceFiles: 'windows_ping.yml',  // Source files to transfer (optional)
+                                    removePrefix: '',  // Remove prefix from transferred files (optional)
+                                    execTimeout: 120000,  // Execution timeout in milliseconds (optional)
+                                    usePty: true  // Use Pseudo Terminal (optional)
+                                )
+                            ],
+                            usePromotionTimestamp: false,
+                            useWorkspaceInPromotion: false,
+                            verbose: true
+                        )
+                    ]
+                )
+            }
+        }            
      }   
 
 }
