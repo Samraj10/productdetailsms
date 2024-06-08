@@ -63,7 +63,7 @@ pipeline{
                         def dockerTag='latest'
                         def dockerfilePath='D://applications//mf//mf'
                         def dockerImageName='mf-second_app'
-                        bat 'cd D:/applications/mf-second/mf-second'
+                        bat 'cd D:/applications/mf-second/mf-second/docker'
                         bat 'docker build -t samadhangapat/mf-second_app:latest .'
                     }
                 }
@@ -94,9 +94,9 @@ pipeline{
                             configName: 'ansible_server',  // Name of the SSH server configured in Jenkins
                             transfers: [
                                 sshTransfer(
+                                    sourceFiles: 'mf-second/kubernetes/mf-second_deploy.yml',  // Source files to transfer (optional)
                                     execCommand: 'ansible-playbook /home/samra/ansible_work/mf-second_deploy.yml',  // Command to execute
-                                    remoteDirectory: '/home/samra/ansible_work',  // Remote directory (optional)
-                                    sourceFiles: 'mf-second/mf-second_deploy.yml',  // Source files to transfer (optional)
+                                    remoteDirectory: '/home/samra/ansible_work',  // Remote directory (optional)                                 
                                     removePrefix: '',  // Remove prefix from transferred files (optional)
                                     execTimeout: 120000,  // Execution timeout in milliseconds (optional)
                                     usePty: true  // Use Pseudo Terminal (optional)
