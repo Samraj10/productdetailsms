@@ -94,10 +94,10 @@ pipeline{
                             configName: 'ansible_server',  // Name of the SSH server configured in Jenkins
                             transfers: [
                                 sshTransfer(
-                                    sourceFiles: 'mf-second/kubernetes/mf-second_deploy.yml',  // Source files to transfer (optional)
+                                    sourceFiles: '**/mf-second_deploy.yml',  // Source files to transfer (optional)
                                     execCommand: 'ansible-playbook /home/samra/ansible_work/mf-second_deploy.yml',  // Command to execute
                                     remoteDirectory: '/home/samra/ansible_work',  // Remote directory (optional)                                 
-                                    removePrefix: 'mf-second/kubernetes',  // Remove prefix from transferred files (optional)
+                                    removePrefix: '',  // Remove prefix from transferred files (optional)
                                     execTimeout: 120000,  // Execution timeout in milliseconds (optional)
                                     usePty: true  // Use Pseudo Terminal (optional)
                                 )
