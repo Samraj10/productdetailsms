@@ -8,6 +8,7 @@ public class MfSecondApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MfSecondApplication.class, args);
+		System.out.println("second ms..");
 	}
 
 }
