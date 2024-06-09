@@ -2,30 +2,30 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mf-app
+  name: mf-second-app
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: mf-app
+      app: mf-second-app
   strategy:
     rollingUpdate:
       maxSurge: 1
-      maxUnavailable: 1
+      maxUnavailable: 0
   template:
     metadata:
       labels:
-        app: mf-app
+        app: mf-second-app
     spec:
       containers:
-        - name: mf-app
-          image: samadhangapat/mf_app:latest
+        - name: mf-second-app
+          image: samadhangapat/mf-second_app:latest
           imagePullPolicy: Always
           ports:
-            - containerPort: 8081
+            - containerPort: 8082
           env:
             - name: SPRING_DATASOURCE_URL
-              value: jdbc:mysql://mysql:3306/mfdb
+              value: jdbc:mysql://mysql:3306/mf-second
             - name: SPRING_DATASOURCE_USERNAME
               value: root 
             - name: SPRING_DATASOURCE_PASSWORD
