@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: productdetails-app
-          image: samadhangapat/productdetailsms:v2
+          image: samadhangapat/productdetailsms:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8082
