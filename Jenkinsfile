@@ -59,16 +59,12 @@ pipeline{
 
                     script {
 
-                        def dockerFileName='Dockerfile'
-                        def dockerTag='latest'
-                        def dockerfilePath='D://applications//productdetailsms'
-                        def dockerImageName='productdetailsms'
                         bat 'cd D:/applications/productdetailsms'
                         bat 'docker build -t samadhangapat/productdetailsms:latest .'
                     }
                 }
             }
-/*
+
             stage('push docker image'){
 
                 steps {
@@ -84,6 +80,7 @@ pipeline{
 
                 }
             }             
+/*
 
             stage('SSH into Ansible Server and Run Playbook') {
             steps {
