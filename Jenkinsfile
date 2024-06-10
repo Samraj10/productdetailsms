@@ -91,7 +91,7 @@ pipeline{
                             configName: 'ansible_server',  // Name of the SSH server configured in Jenkins
                             transfers: [
                                 sshTransfer(
-                                    sourceFiles: 'productdetailsms/k8s-prdms/deploy-script.yml',  // Source files to transfer (optional)
+                                    sourceFiles: '**/k8s-prdms/deploy-script.yml',  // Source files to transfer (optional)
                                     remoteDirectory: 'power-tiller-app',  // Remote directory (optional) 
                                     execCommand: 'ansible-playbook /home/samra/power-tiller-app/k8s-prdms/deploy-script.yml',  // Command to execute
                                     removePrefix: '',  // Remove prefix from transferred files (optional)
