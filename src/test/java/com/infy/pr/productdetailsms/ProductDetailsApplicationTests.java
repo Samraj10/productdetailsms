@@ -1,10 +1,10 @@
-package com.infy.pr.mf_second;
+package com.infy.pr.productdetailsms;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MfSecondApplicationTests {
+class ProductDetailsApplicationTests {
 
 	@Test
 	void contextLoads() {

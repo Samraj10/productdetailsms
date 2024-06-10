@@ -2,12 +2,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mf-second-app
+  name: productdetails-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mf-second-app
+      app: productdetails-app
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -15,11 +15,11 @@ spec:
   template:
     metadata:
       labels:
-        app: mf-second-app
+        app: productdetails-app
     spec:
       containers:
-        - name: mf-second-app
-          image: samadhangapat/mf-second_app:v2
+        - name: productdetails-app
+          image: samadhangapat/productdetailsms:v2
           imagePullPolicy: Always
           ports:
             - containerPort: 8082
