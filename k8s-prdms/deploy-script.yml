@@ -4,8 +4,7 @@
   gather_facts: no
   vars:
     workdir: D:\applications\productdetailsms\k8s-prdms
-    src_file: /home/samra/power-tiller-app/k8s-prdms/deploy-script.yml
-    dest_file: D:\applications\productdetailsms\k8s-prdms\deploy-script.yml
+
   tasks:
     
     # in real time do check cluster is running or not but here for time saving not executing below two tasks 
@@ -30,11 +29,6 @@
     
     - name: create service 
       win_shell: kubectl apply -f {{ workdir }}/AppService.yml
-    
-    - name: Copy file to destination
-      win_copy:
-        src: "{{ src_file }}"
-        dest: "{{ dest_file }}"
 
 
 
