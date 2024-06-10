@@ -15,7 +15,7 @@ pipeline{
 
         stages{
 
-
+/*
             stage('checkout'){
 
                 steps {
@@ -80,7 +80,7 @@ pipeline{
 
                 }
             }             
-/*
+*/
 
             stage('SSH into Ansible Server and Run Playbook') {
             steps {
@@ -107,7 +107,7 @@ pipeline{
                 )
             }
         }
-*/            
+            
      }   
 
 }
