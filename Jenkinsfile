@@ -15,7 +15,7 @@ pipeline{
 
         stages{
 
-/*
+
             stage('checkout'){
 
                 steps {
@@ -68,7 +68,7 @@ pipeline{
                     }
                 }
             }
-
+/*
             stage('push docker image'){
 
                 steps {
@@ -84,7 +84,7 @@ pipeline{
 
                 }
             }             
-*/
+
             stage('SSH into Ansible Server and Run Playbook') {
             steps {
                 // Use the SSH Publisher plugin to run commands on the remote ser
@@ -96,7 +96,7 @@ pipeline{
                                 sshTransfer(
                                     sourceFiles: '**/k8s-prdms/**',  // Source files to transfer (optional)
                                     remoteDirectory: 'power-tiller-app',  // Remote directory (optional) 
-                                    execCommand: 'ansible-playbook /home/samra/ansible_work/windows_ping.yml',  // Command to execute
+                                    execCommand: 'ansible-playbook /home/samra/power-tiller-app/k8s-prdms/deploy-script.yml',  // Command to execute
                                     removePrefix: '',  // Remove prefix from transferred files (optional)
                                     execTimeout: 120000,  // Execution timeout in milliseconds (optional)
                                     usePty: true  // Use Pseudo Terminal (optional)
@@ -109,7 +109,8 @@ pipeline{
                     ]
                 )
             }
-        }            
+        }
+*/            
      }   
 
 }
