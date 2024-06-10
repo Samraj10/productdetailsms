@@ -1,13 +1,13 @@
-package com.infy.pr.mf_second.service;
+package com.infy.pr.productdetailsms.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.infy.pr.mf_second.model.GmailUser;
-import com.infy.pr.mf_second.model.User;
-import com.infy.pr.mf_second.model.YahooUser;
-import com.infy.pr.mf_second.repo.GmailRepository;
-import com.infy.pr.mf_second.repo.YahooRepository;
+import com.infy.pr.productdetailsms.model.GmailUser;
+import com.infy.pr.productdetailsms.model.User;
+import com.infy.pr.productdetailsms.model.YahooUser;
+import com.infy.pr.productdetailsms.repo.GmailRepository;
+import com.infy.pr.productdetailsms.repo.YahooRepository;
 
 @Service
 public class UserService {

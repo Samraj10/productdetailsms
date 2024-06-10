@@ -1,9 +1,10 @@
-package com.infy.pr.mf_second.controller;
+package com.infy.pr.productdetailsms.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import com.infy.pr.mf_second.model.User;
-import com.infy.pr.mf_second.service.UserService;
+
+import com.infy.pr.productdetailsms.model.User;
+import com.infy.pr.productdetailsms.service.UserService;
 
 @RestController
 @RequestMapping("/api/susers")

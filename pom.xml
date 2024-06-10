@@ -11,10 +11,10 @@
 	</parent>
 
 	<groupId>com.infy.pr</groupId>
-	<artifactId>mf-second</artifactId>
+	<artifactId>productdetailsms</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	<name>mf-second</name>
+	<name>productdetailsms</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
@@ -61,7 +61,7 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>mf-second</finalName>
+		<finalName>productdetailsms</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

@@ -1,4 +1,4 @@
-package com.infy.pr.mf_second;
+package com.infy.pr.productdetailsms;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
@@ -7,7 +7,7 @@ public class ServletInitializer extends SpringBootServletInitializer {
 
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(MfSecondApplication.class);
+		return application.sources(ProductDetailsApplication.class);
 	}
 
 }

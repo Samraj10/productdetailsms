@@ -1,13 +1,13 @@
-package com.infy.pr.mf_second;
+package com.infy.pr.productdetailsms;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MfSecondApplication {
+public class ProductDetailsApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MfSecondApplication.class, args);
+		SpringApplication.run(ProductDetailsApplication.class, args);
 		System.out.println("second ms..");
 	}
 

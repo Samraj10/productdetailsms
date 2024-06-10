@@ -1,4 +1,4 @@
-package com.infy.pr.mf_second.model;
+package com.infy.pr.productdetailsms.model;
 
 
 public class User {

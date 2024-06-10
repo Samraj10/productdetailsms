@@ -1,4 +1,4 @@
-package com.infy.pr.mf_second.model;
+package com.infy.pr.productdetailsms.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class GmailUser {
+public class YahooUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

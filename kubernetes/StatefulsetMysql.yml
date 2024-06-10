@@ -1,37 +1,39 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: mysql
+  name: second-mysql
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mysql
-  serviceName: mysql
+      app: second-mysql
+  serviceName: second-mysql
   template:
     metadata:
       labels:
-        app: mysql
+        app: second-mysql
     spec:
       containers:
-        - name: mysql
+        - name: second-mysql
           image: mysql:5.7
+          imagePullPolicy: Always
           ports:
             - containerPort: 3306
           env:
             - name: MYSQL_ROOT_PASSWORD
               value: root
             - name: MYSQL_DATABASE
-              value: mf-second
+              value: mfsecond
           volumeMounts:
-            - name: mysql-data
+            - name: mysql-data-two
               mountPath: /var/lib/mysql
   volumeClaimTemplates:
     - metadata:
-        name: mysql-data
+        name: mysql-data-two
       spec:
         accessModes:
           - ReadWriteOnce
         resources:
           requests:
             storage: 1Gi
+      
