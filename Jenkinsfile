@@ -65,21 +65,15 @@ pipeline{
                 }
             }
 
-            stage('push docker image'){
-
+             stage('Push Docker Image') {
                 steps {
-
                     script {
-
-                        withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
-                            bat "docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}"
+                        docker.withRegistry('https://index.docker.io/v1/', 'dockerhub') {
+                            docker.image('samadhangapat/productdetailsms:latest').push()
                         }
-                            bat " docker push ${DOCKER_IMAGE_NAME} "
-
                     }
-
                 }
-            }             
+            }                  
 
 
             stage('SSH into Ansible Server and Run Playbook') {
