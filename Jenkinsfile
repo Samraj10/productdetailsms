@@ -59,11 +59,11 @@ pipeline{
 
                     script {
 
-                        bat 'cd D:/applications/productdetailsms'
-                        bat 'docker build -t samadhangapat/productdetailsms:latest .'
+                        docker.build('samadhangapat/productdetailsms:latest')
                     }
                 }
             }
+            
 
              stage('Push Docker Image') {
                 steps {
