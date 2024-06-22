@@ -21,8 +21,12 @@ pipeline{
                     git url: 'https://github.com/Samraj10/productdetailsms.git', branch: 'master'
 
                 }
-/*
+
             }
+
+/*
+
+
             stage('build'){
 
                 steps {
