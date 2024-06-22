@@ -3,7 +3,7 @@ kind: StatefulSet
 metadata:
   name: second-mysql
 spec:
-  replicas: 0
+  replicas: 1
   selector:
     matchLabels:
       app: second-mysql
