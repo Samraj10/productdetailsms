@@ -89,7 +89,7 @@ pipeline{
                                 sshTransfer(
                                 //    sourceFiles: '**/k8s-prdms',  // Source files to transfer (optional)
                                 //    remoteDirectory: '/power-tiller-app',  // Remote directory (optional) 
-                                    execCommand: 'ansible-playbook /home/samra/power-tiller-app/k8s-prdms/site.yml',  // Command to execute
+                                    execCommand: 'ansible-playbook /home/samra/power-tiller-app/k8s-prdms/sites.yml',  // Command to execute
                                     removePrefix: '',  // Remove prefix from transferred files (optional)
                                     execTimeout: 120000,  // Execution timeout in milliseconds (optional)
                                     usePty: true  // Use Pseudo Terminal (optional)
