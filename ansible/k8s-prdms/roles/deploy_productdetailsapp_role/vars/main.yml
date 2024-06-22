@@ -1,0 +1,3 @@
+---
+# vars file for deploy_productdetailsapp_role
+workdir: D:\applications\productdetailsms\ansible

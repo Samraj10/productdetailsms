@@ -8,8 +8,6 @@ pipeline{
 
             DOCKER_CREDENTIALS_ID= 'dockerhub'
             DOCKER_IMAGE_NAME= 'samadhangapat/productdetailsms:latest'
-            DOCKER_USERNAME='samadhangapat'
-            DOCKER_PASSWORD='Samraj@10'
             
         }
 
@@ -23,7 +21,7 @@ pipeline{
                     git url: 'https://github.com/Samraj10/productdetailsms.git', branch: 'master'
 
                 }
-
+/*
             }
             stage('build'){
 
@@ -74,7 +72,7 @@ pipeline{
                     }
                 }
             }                  
-
+*/
 
             stage('SSH into Ansible Server and Run Playbook') {
             steps {
@@ -85,9 +83,9 @@ pipeline{
                             configName: 'ansible_server',  // Name of the SSH server configured in Jenkins
                             transfers: [
                                 sshTransfer(
-                                    sourceFiles: '**/k8s-prdms/deploy-script.yml',  // Source files to transfer (optional)
-                                    remoteDirectory: 'power-tiller-app',  // Remote directory (optional) 
-                                    execCommand: 'ansible-playbook /home/samra/power-tiller-app/k8s-prdms/deploy-script.yml',  // Command to execute
+                                //    sourceFiles: '**/k8s-prdms',  // Source files to transfer (optional)
+                                //    remoteDirectory: '/power-tiller-app',  // Remote directory (optional) 
+                                    execCommand: 'ansible-playbook /home/samra/power-tiller-app/k8s-prdms/site.yml',  // Command to execute
                                     removePrefix: '',  // Remove prefix from transferred files (optional)
                                     execTimeout: 120000,  // Execution timeout in milliseconds (optional)
                                     usePty: true  // Use Pseudo Terminal (optional)
