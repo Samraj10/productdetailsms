@@ -24,8 +24,6 @@ pipeline{
 
             }
 
-/*
-
 
             stage('build'){
 
@@ -76,7 +74,7 @@ pipeline{
                     }
                 }
             }                  
-*/
+
 
             stage('SSH into Ansible Server and Run Playbook') {
             steps {
